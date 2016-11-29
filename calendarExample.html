@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style/PMDatesPicker.css">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+<body>
+<style type="text/css">
+	body{
+		text-align: center;
+		font-family: sans-serif;
+		color: #454545;
+		padding-top: 1em;
+	}
+
+	.container{
+		width: 400px;
+		margin: auto;
+	}
+	.calendar{
+		box-shadow: 0px 0px 10px 0px #e3e3e3;
+		padding: 0.5em;
+	}
+	.container > button {
+		width: 200px;
+		height: 45px;
+		background-color: #F64747;
+		color :#fff;
+		border: none;
+		box-shadow: none;
+		margin-top: 1em;
+		border-radius: 4px;
+		cursor: pointer;
+	}
+	.container > button:hover{
+		background-color: #F62459;
+	}
+</style>
+
+<div class="container">
+	<h1>Persian MultiDates Picker</h1>
+	<h5>Hello, This is an example of Persian Multidates Picker calendar</h5>
+	<h6>you can seek on months and pick some days ( every days you want ) and after selection just need to click on select button. you should see your selected day in an alert message.</h6>
+	<p>Hope you enjoy it </p>
+	<div class="calendar" id="calendar"></div>	
+	<button onclick="send()">Select</button>
+</div>
+
+<script src="libs/jquery.js"></script>
+<script src="libs/persian-date-0.1.8.min.js"></script>
+<script src="script/PMDatesPicker.js"></script>
+<script type="text/javascript">
+	var c = PMDatesPicker.calendar("#calendar");
+	function send(){
+		alert('your selected days : ' + c.getSelectedDays());
+
+	}
+
+</script>
+</body>
+</html>
