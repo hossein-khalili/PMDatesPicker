@@ -14,6 +14,10 @@ to do that you just need to add these line of code to your html file.
 <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 <script src="http://rawgithub.com/babakhani/PersianDate/master/dist/0.1.8/persian-date-0.1.8.min.js"></script>
 ```
+add fontawesome stylesheets
+```
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+```
 and also you should load PMDatesPicker's `.js` and `.css` file 
 ```
 <link rel="stylesheet" type="text/css" href="PMDatesPicker.css">
