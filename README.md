@@ -1,7 +1,7 @@
 # PMDatesPicker
 
 ## Description
-PMDatesPicker is a multidates picker jalali calendar based on persianDate library and jQuery.
+PMDatesPicker is a Jalali multidates picker calendar based on persianDate library and jQuery.
 see live demo here : https://hossein-khalili.github.io/PMDatesPicker/
 > to find out more about persianDate see here : http://babakhani.github.io/PersianWebToolkit/doc/persiandate/0.1.8/
 
