@@ -63,7 +63,7 @@ window.PMDatesPicker = (function($,persianDate){
 					now = now.add('day',30);	
 				}
 			}
-			$('.calendarTable td[data-date='+today.format('YYYY-M-D')+']').addClass('today');
+			$('.calendarTable td[data-date='+today.format('YYYY-MM-DD')+']').addClass('today');
 			$('.calendarTable').first().addClass('active');
 			$('.calendarTable.active td').filter(function(){return Number(String($(this).data('date')).split('-')[2]) < today.date() }).addClass('disabled');
 			return PMDatesPicker;
@@ -71,12 +71,13 @@ window.PMDatesPicker = (function($,persianDate){
 		
 		function selectDay(date){
 			list.push(date);	
-			$('td[data-date ='+date+']').children(0).toggleClass('selected');
+			$('td[data-date ='+date+']').children('div').addClass('selected');
+			console.log($('td[data-date ='+date+']').children(0));
 		}
 		
 		function deselectDay(date){
 			list.splice(list.indexOf(date),1);
-			$('td[data-date ='+date+']').children(0).toggleClass('selected');
+			$('td[data-date ='+date+']').children(0).removeClass('selected');
 		}
 		
 		function nextMonth(calendar){
@@ -134,13 +135,13 @@ window.PMDatesPicker = (function($,persianDate){
 					}
 					var col = document.createElement('td');
 					col.innerHTML = "<div class='date'>"+printDay.date()+"</div>";
-					col.dataset.date = printDay.year()+'-'+printDay.month()+'-'+printDay.date();
+					col.dataset.date = printDay.format('YYYY-MM-DD');
 					col.onclick = function(){
 						if(!$(this).hasClass('disabled')){
 							if($(this).children().hasClass('selected')){
-								PMDatesPicker.deselectDay(this.dataset.date);
+								PMDatesPicker.deselectDays([this.dataset.date]);
 							}else{
-								PMDatesPicker.selectDay(this.dataset.date);
+								PMDatesPicker.selectDays([this.dataset.date]);
 							}
 							
 						}
@@ -179,13 +180,13 @@ window.PMDatesPicker = (function($,persianDate){
 					var col = document.createElement('td');
 
 					col.innerHTML = "<div class='date'>"+printDay.date()+"</div>";
-					col.dataset.date = printDay.year()+'-'+printDay.month()+'-'+printDay.date();
+					col.dataset.date = printDay.format('YYYY-MM-DD');
 					col.onclick = function(){
 						if(!$(this).hasClass('disabled')){
 							if($(this).children().hasClass('selected')){
-								PMDatesPicker.deselectDay(this.dataset.date);
+								PMDatesPicker.deselectDays([this.dataset.date]);
 							}else{
-								PMDatesPicker.selectDay(this.dataset.date);
+								PMDatesPicker.selectDays([this.dataset.date]);
 							}
 							
 						}
@@ -220,8 +221,9 @@ window.PMDatesPicker = (function($,persianDate){
 		calendar.now = function(){
 			return today;
 		};
-		calendar.selectDates = function(dates){
+		calendar.selectDays = function(dates){
 			for (var day = 0; day < dates.length; day++) {
+				console.log('test'+dates[day]);
 				selectDay(dates[day]);
 			}
 		};
