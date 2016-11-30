@@ -39,7 +39,7 @@ add a script tag to your html and call init function like below
 ### Methods
 
 ```
-  var myCalendar = PMDatesPicker.calendar( selector , limit );
+  var myCalendar = PMDatesPicker.calendar( selector , limit /*optional*/ );
 ```
 this method create your calendar inside of the element that you selected with the selector.
 you can also set limits, it's an optional parameter to set number of months from now that user can pick dates from them.
@@ -51,11 +51,11 @@ limit's default value is 12 months from now.
 returns this moment's persianDate object 
 
 ```
-  myCalendar.selectDay(date);
-  myCalendar.deselectDay(date);
+  myCalendar.selectDays([date1,date2,...]);
+  myCalendar.deselectDays([date1,date2,...]);
 ```
 
-select and deselect a special day in calendar, date format should be like "YYYY-M-D"
+select and deselect a special day in calendar, give a list of dates as an argument. dates' format should be like "YYYY-M-D"
 
 ```
   myCalendar.nextMonth($("#yourFavoriteId"));
