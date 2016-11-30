@@ -55,7 +55,7 @@ returns this moment's persianDate object
   myCalendar.deselectDays([date1,date2,...]);
 ```
 
-select and deselect a special day in calendar, give a list of dates as an argument. dates' format should be like "YYYY-M-D"
+select and deselect a special day in calendar, give a list of dates as an argument. dates' format should be like "YYYY-MM-DD"
 
 ```
   myCalendar.nextMonth($("#yourFavoriteId"));
