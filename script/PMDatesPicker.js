@@ -220,8 +220,10 @@ window.PMDatesPicker = (function($,persianDate){
 		calendar.now = function(){
 			return today;
 		};
-		calendar.selectDay = function(date){
-			selectDay(date);
+		calendar.selectDates = function(dates){
+			for (var day = 0; day < dates.length; day++) {
+				selectDay(dates[day]);
+			}
 		};
 		calendar.nextMonth=function(calendar){
 			nextMonth(calendar);
@@ -229,8 +231,10 @@ window.PMDatesPicker = (function($,persianDate){
 		calendar.prevMonth=function(calendar){
 			prevMonth(calendar);
 		};
-		calendar.deselectDay = function(date){
-			deselectDay(date);
+		calendar.deselectDays = function(dates){
+			for (var day = 0; day < dates.length; day++) {
+				deselectDay(dates[day]);
+			}
 		};
 		calendar.getSelectedDays = function(){
 			return list;
